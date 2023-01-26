@@ -91,4 +91,13 @@ def handle_missing_values(df, prop_required_col, prop_required_row):
     df.dropna(thresh=drop_rows, axis=0, inplace=True)
     
     return df    
+   
+
+def wrangle_zillow(prop_required_col, prop_required_row):
     
+    df = get_zillow_data()
+    df = drop_duplicates(df)
+    df = sfh(df)
+    df = handle_missing_values(df, prop_required_col, prop_required_row)
+    
+    return df
