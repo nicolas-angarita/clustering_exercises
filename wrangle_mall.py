@@ -58,7 +58,7 @@ def train_val_test(df, stratify = None):
     
     train, test = train_test_split(df, train_size = 0.7, random_state = seed, stratify = None)
     
-    validate, test = train_test_split(test, train_size = 0.5, random_state = seed, stratify = None)
+    validate, test = train_test_split(test, test_size = 0.5, random_state = seed, stratify = None)
     
     return train, validate, test        
         
